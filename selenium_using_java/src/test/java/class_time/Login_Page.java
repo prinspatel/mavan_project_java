@@ -57,7 +57,7 @@ public class Login_Page {
 		
 		
 		// 6) Verify the title of dashboard page   
-		// Exp title : OrangeHRM
+		/* 1)  Exp title : OrangeHRM
 		if (title.equals("OrangeHRM"))
 		{
 			System.out.println("Test Pass");
@@ -65,11 +65,28 @@ public class Login_Page {
 		}
 		else
 		{
-			System.out.println("Test Faild");
+			System.out.println("Test Failed");
 		}
-
+		*/
+		
+		// 2) Exp Text Dashboard
+		String actual_text=driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[1]/header/div[1]/div[1]/span/h6")).getText();
+		String Exp_text="Dashboard";
+		
+		if (Exp_text.equals(actual_text))
+		{
+			System.out.println("Test Pass");
+			System.out.println(actual_text);
+		}
+		else
+		{
+			System.out.println("Test Failed");
+		}
+		
+		
 		// 7) close browser 
-		driver.close();
+		//driver.close(); 	
+		driver.quit();
 	}
 	
 }
